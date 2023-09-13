@@ -22,7 +22,8 @@ module.exports = (client) => {
         const rest = new REST({ version: '10' }).setToken(token)
 
         try {
-            console.log(`Started Refreshing Commands`)
+         //   console.log(`\n-----------------------------------------------------------------`)
+            console.log(`\nStarted Refreshing Commands`)
 
             await rest.put(
                 // Routes.applicationCommands(clientID, guildID), // This Will Work For Specific Guild(Server)
@@ -30,9 +31,9 @@ module.exports = (client) => {
                 { body: client.commandArray }
             )
 
-            console.log(`Successfully Refreshed Commands`)
+            console.log(`Successfully Refreshed Commands\n`)
         } catch (error) {
-            console.error(error)
+            console.error(error);
         }
     }
 }

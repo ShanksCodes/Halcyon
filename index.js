@@ -1,9 +1,9 @@
 require('dotenv').config()
 const { Client, GatewayIntentBits, Collection } = require('discord.js')
-const { token } = require('./config.json')
+//const { token } = require('./config.json')
 const fs = require('fs')
 
-
+console.log(`\n-----------------------------------------------------------------`)
 const client = new Client({ intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] })
 client.commands = new Collection()
 client.commandArray = []
@@ -14,7 +14,6 @@ for (const folder of funtionFolders) {
     for (const file of functionFiles) require(`./src/functions/${folder}/${file}`)(client) // Read Files
 }
 
-client.handleCommands()
-client.handleEvents()
-
-client.login(process.env.TOKEN)
+client.handleCommands();
+client.handleEvents();
+client.login(process.env.TOKEN);
