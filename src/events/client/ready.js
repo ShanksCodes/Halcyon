@@ -10,13 +10,14 @@ module.exports = {
       "under construction",
       "releasing soon",
       "one piece is best",
+      "watch breaking bad asap",
     ];
 
     setInterval(() => {
       const status = activities[Math.floor(Math.random() * activities.length)];
       client.user.setPresence({
         activities: [{ name: `${status}`, type: ActivityType.Watching }],
-        status: "dnd",
+        status: "online",
       });
     }, 150000);
   },
